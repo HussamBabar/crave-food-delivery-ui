@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A responsive food delivery frontend demo built with HTML, CSS and JavaScript." />
+  <title>Crave | Food Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Fresh cravings, delivered to your door <span>•</span> <strong>Free delivery over Rs. 2,000</strong></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Crave home"><span class="brand-mark">c</span> crave<span class="brand-dot">.</span></a>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#menu" class="nav-link">Explore menu</a>
+      <a href="#how-it-works" class="nav-link">How it works</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button mobile-menu" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button class="cart-trigger" id="openCart" aria-label="Open shopping cart"><span aria-hidden="true">🛍️</span><span class="cart-trigger-label">Your order</span><span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CITY'S FOOD SPOT</div>
+        <h1>Good food.<br><span>Good mood.</span></h1>
+        <p class="hero-text">From local favourites to comfort-food classics, your next delicious moment is just a few clicks away.</p>
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#menu">Explore menu <span>↗</span></a>
+          <a class="text-link" href="#how-it-works">How it works <span>→</span></a>
+        </div>
+        <div class="hero-proof">
+          <div class="avatar-stack" aria-hidden="true"><span>👩🏽</span><span>👨🏻</span><span>👩🏼</span></div>
+          <div><strong>4.9/5</strong><small>Loved by foodies</small></div>
+          <span class="proof-divider"></span>
+          <div><strong>25–35 min</strong><small>Average delivery</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-sticker sticker-top">Made with <span>♥</span></div>
+        <div class="hero-food-photo"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85" alt="Juicy cheeseburger with fresh lettuce and tomato"></div>
+        <div class="floating-card rating-card"><span class="rating-icon">★</span><div><strong>4.9 rating</strong><small>From 2,400+ reviews</small></div></div>
+        <div class="floating-card delivery-card"><span class="delivery-icon">🚴</span><div><strong>Fast delivery</strong><small>At your doorstep</small></div></div>
+        <div class="hero-spark spark-one">✳</div><div class="hero-spark spark-two">✦</div>
+      </div>
+    </section>
+
+    <section class="section-wrap menu-section" id="menu">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE GOOD STUFF</div><h2>What are you <span>craving?</span></h2></div>
+        <p>Find your favourite flavours and let the good times roll.</p>
+      </div>
+      <div class="menu-toolbar">
+        <div class="category-list" id="categoryList" aria-label="Filter food by category">
+          <button class="category-chip selected" data-category="All">🍽️ All food</button>
+          <button class="category-chip" data-category="Burgers">🍔 Burgers</button>
+          <button class="category-chip" data-category="Pizza">🍕 Pizza</button>
+          <button class="category-chip" data-category="Asian">🍜 Asian</button>
+          <button class="category-chip" data-category="Healthy">🥗 Healthy</button>
+          <button class="category-chip" data-category="Desserts">🍰 Desserts</button>
+        </div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search dishes..." aria-label="Search dishes"><kbd>⌘ K</kbd></label>
+      </div>
+      <div class="results-line"><span id="resultsCount">Showing all dishes</span><span class="sort-label">Handpicked for you <span>✦</span></span></div>
+      <div class="food-grid" id="foodGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><span>🥲</span><h3>No dishes found</h3><p>Try another search or choose a different category.</p><button class="button button-primary" id="resetFilters">Reset filters</button></div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-wrap">
+        <div class="section-heading centered-heading"><div><div class="eyebrow">EASY AS ONE, TWO, THREE</div><h2>Your food, <span>your way.</span></h2></div><p>Great food shouldn't be complicated.</p></div>
+        <div class="steps-grid">
+          <article class="step-card"><div class="step-illustration peach">🔎<span>01</span></div><h3>Find your favourite</h3><p>Browse the menu and discover something delicious.</p></article>
+          <article class="step-card"><div class="step-illustration yellow">🛒<span>02</span></div><h3>Make it yours</h3><p>Add dishes to your cart and review your order.</p></article>
+          <article class="step-card"><div class="step-illustration mint">🛵<span>03</span></div><h3>Enjoy the moment</h3><p>Complete the demo checkout and you're all set.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta section-wrap">
+      <div><div class="eyebrow">A LITTLE TREAT?</div><h2>Your next favourite<br>meal is waiting.</h2><p>Scroll up, pick a dish, and build your perfect order.</p></div>
+      <a class="button button-dark" href="#menu">Find something tasty <span>↗</span></a>
+      <div class="cta-decoration" aria-hidden="true">✳</div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">c</span> crave<span class="brand-dot">.</span></a><p>Made for food lovers, with a little extra flavour.</p><div class="footer-meta"><span>© <span id="year"></span> Crave UI</span><span>Frontend demo · No real orders are placed</span></div></footer>
+
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header"><div><div class="eyebrow">YOUR SELECTION</div><h2>Your order <span id="drawerItemCount">(0)</span></h2></div><button class="close-button" id="closeCart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>🛍️</span><h3>Your cart is hungry</h3><p>Add something delicious to get started.</p><button class="button button-primary" id="browseMenu">Browse menu</button></div>
+    <div class="cart-summary hidden" id="cartSummary">
+      <div class="summary-row"><span>Subtotal</span><strong id="subtotal">Rs. 0</strong></div>
+      <div class="summary-row"><span>Delivery fee</span><strong id="deliveryFee">Rs. 150</strong></div>
+      <div class="summary-row total-row"><span>Total</span><strong id="cartTotal">Rs. 0</strong></div>
+      <p class="delivery-note">🚚 Free delivery on orders over Rs. 2,000</p>
+      <button class="button button-primary checkout-button" id="checkoutButton">Continue to checkout <span>→</span></button>
+    </div>
+  </aside>
+
+  <div class="modal hidden" id="foodModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close-button modal-close" id="closeFoodModal" aria-label="Close details">×</button>
+    <div id="foodModalContent"></div>
+  </div>
+
+  <div class="modal checkout-modal hidden" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <button class="close-button modal-close" id="closeCheckout" aria-label="Close checkout">×</button>
+    <div class="eyebrow">ALMOST THERE</div><h2 id="checkoutTitle">Checkout <span>details</span></h2>
+    <p class="modal-intro">Fill in your details to complete this frontend demo checkout.</p>
+    <form id="checkoutForm" class="checkout-form">
+      <label>Full name<input name="fullName" type="text" placeholder="e.g. Alex Morgan" required minlength="2"></label>
+      <label>Email address<input name="email" type="email" placeholder="you@example.com" required></label>
+      <label>Delivery address<textarea name="address" rows="3" placeholder="House, street, area" required minlength="8"></textarea></label>
+      <label>Payment method<select name="payment" required><option value="Cash on delivery">Cash on delivery</option><option value="Card (demo only)">Card (demo only)</option></select></label>
+      <div class="checkout-total"><span>Order total</span><strong id="checkoutTotal">Rs. 0</strong></div>
+      <button class="button button-primary checkout-button" type="submit">Place demo order <span>→</span></button>
+      <p class="form-note">Demo only: your information is not sent or stored.</p>
+    </form>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
